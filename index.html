@@ -3,20 +3,68 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Mercado</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Mi Mercado</h1>
-        <div id="user-auth"></div>
+        <div id="user-section">
+            <button id="btn-login">Iniciar Sesión</button>
+            <button id="btn-register">Registrarse</button>
+            <button id="btn-logout" style="display: none;">Cerrar Sesión</button>
+        </div>
     </header>
-    
+
+    <nav>
+        <input type="text" id="search-input" placeholder="Buscar productos...">
+        <button id="btn-search">Buscar</button>
+    </nav>
+
     <main>
-        <section id="product-list"></section>
-        <section id="product-detail"></section>
-        <section id="seller-dashboard"></section>
+        <!-- Sección para vendedores -->
+        <section id="seller-dashboard" class="hidden">
+            <h2>Panel del Vendedor</h2>
+            <button id="btn-add-product">Agregar Producto</button>
+            <div id="seller-products"></div>
+        </section>
+
+        <!-- Listado de productos -->
+        <section id="product-list">
+            <div class="products-grid"></div>
+        </section>
+
+        <!-- Detalle del producto -->
+        <section id="product-detail" class="hidden">
+            <button id="btn-back">Volver</button>
+            <div class="product-detail-content"></div>
+        </section>
     </main>
+
+    <!-- Modales -->
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="login-form">
+                <h3>Iniciar Sesión</h3>
+                <input type="email" id="login-email" placeholder="Correo electrónico">
+                <input type="password" id="login-password" placeholder="Contraseña">
+                <button id="btn-do-login">Entrar</button>
+            </div>
+            <div id="register-form" class="hidden">
+                <h3>Registrarse</h3>
+                <input type="text" id="register-name" placeholder="Nombre completo">
+                <input type="email" id="register-email" placeholder="Correo electrónico">
+                <input type="password" id="register-password" placeholder="Contraseña">
+                <select id="user-type">
+                    <option value="buyer">Comprador</option>
+                    <option value="seller">Vendedor</option>
+                </select>
+                <button id="btn-do-register">Registrar</button>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
