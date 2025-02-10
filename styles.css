@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background: #ffe600;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 250px;
+}
+
+.seller-dashboard {
+    background: #f5f5f5;
+    padding: 20px;
+}
